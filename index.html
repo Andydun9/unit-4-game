@@ -3,30 +3,44 @@
 <meta charset="utf-8">
 
 <head>
-    <title>Crystals Collector</title>
+    <title>Car Collector</title>
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="assets/images/pexels-photo-120049.jpeg" type="image/jpeg" sizes="16x16">
 </head>
 
 <header>
-    <h1>Crystals Collector</h1>
+    <h1>Car Collector</h1>
 </header>
 
 <body>
     <p>You will be given a random number at the start of the game.</p>
-    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of point to your total score.</p>
+    <p>There are cars below. By clicking on a car you will add a specific amount of point to your total score.</p>
     <p>You win the game by matching your total score to a random number, you lose the game if your total score goes above the
         random number.</p>
-    <p>The value of each crystal is hidden from you until you click on it. </p>
-    <p>Each time when the game start, the game will change the values of each crystal.</p>
+    <p>The value of each car is hidden from you until you click on it. </p>
+    <p>Each time when the game start, the game will change the values of each car.</p>
+
+    <img id="car1" src="assets/images/audi-audi-car-automobile-168938.jpg" alt="picture of an Audi car" width="300px">
+    <img id="car2" src="assets/images/pexels-photo-1093230.jpeg" alt="picture of a mustang" width="300px">
+    <img id="car3" src="assets/images/pexels-photo-120049.jpeg" alt="picture of a mercedies" width="300px">
+    <img id="car4" src="assets/images/pexels-photo-210143.jpeg" alt="picture of a Ford GT" width="300px">
+
+    <br>
+    <button type="button" id="random">Press to Start the Game</button>
+
 </body>
 
-<div></div>
+<div id="display"></div>
 
 <section>
     <p>Wins:</p>
     <p>Losses</p>
 </section>
 
-<div>Your total score:</div>
+<p>Your Total Score:<span id="total"> </span></p>
 
 <div></div>
 
@@ -34,5 +48,93 @@
     &copy;2018
 
 </footer>
+<script>
+
+    var carNumber= [1 , 2, 3, 4, 5, 6 , 7, 8, 9, 10]
+
+    var randomNumber = ""
+   
+    var randomItem = carNumber[Math.floor(Math.random() * carNumber.length)];
+    var randomItem2 = carNumber[Math.floor(Math.random() * carNumber.length)];
+    var randomItem3 = carNumber[Math.floor(Math.random() * carNumber.length)];
+    var randomItem4 = carNumber[Math.floor(Math.random() * carNumber.length)];
+    var car1= randomItem;
+    var car2= randomItem2;
+    var car3= randomItem3;
+    var car4= randomItem4;
+    var totalCars= ""
+    
+    console.log("this :"+totalCars)
+    
+
+    $(document).ready(function () {
+        //Sets initial number
+        $("#random").click(function () {
+            var random = Math.floor(Math.random() * 80) + 20;
+            console.log(random)
+            $("#display").text(random)
+
+        })
+
+        //sets the value for each car
+
+        $("#car1").click(function () {
+          //  var car1 = Math.floor(Math.random() * 10) + 1;
+            
+          var car1=randomItem
+          total= total + car1
+          console.log(car1)
+          console.log(total)
+           // $("#car1").append(car1)
+        })
+
+        $("#car2").click(function () {
+            var car2=randomItem2
+        //    var car2 = Math.floor(Math.random() * 10) + 1;
+            console.log("car2: "+car2)
+
+        })
+
+        $("#car3").click(function () {
+
+            var car3=randomItem3
+            //var car3 = Math.floor(Math.random() * 10) + 1;
+            console.log("car3: "+car3)
+
+        })
+
+        $("#car4").click(function () {
+
+            var car4=randomItem4
+           // var car4 = Math.floor(Math.random() * 10) + 1;
+            console.log("car4: "+car4)
+
+        })
+        
+        $(totalCars).click(function(){
+            totalCars= total+car1
+            totalCars= total+car2
+            totalCars= total+car3
+            totalCars= total+car4
+            console.log("add:"totalCars)
+        })
+        
+        
+
+        
+})
+  
+  
+    
+
+
+
+
+
+
+</script>
+
+
+
 
 </html>
