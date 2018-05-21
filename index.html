@@ -40,7 +40,9 @@
     <p>Losses</p>
 </section>
 
-<p>Your Total Score:<span id="total"> </span></p>
+<p>Your Total Score:
+    <span id="total"> </span>
+</p>
 
 <div></div>
 
@@ -50,22 +52,22 @@
 </footer>
 <script>
 
-    var carNumber= [1 , 2, 3, 4, 5, 6 , 7, 8, 9, 10]
+    var carNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    var randomNumber = ""
-   
+    var randomNumber = 0
+
     var randomItem = carNumber[Math.floor(Math.random() * carNumber.length)];
     var randomItem2 = carNumber[Math.floor(Math.random() * carNumber.length)];
     var randomItem3 = carNumber[Math.floor(Math.random() * carNumber.length)];
     var randomItem4 = carNumber[Math.floor(Math.random() * carNumber.length)];
-    var car1= randomItem;
-    var car2= randomItem2;
-    var car3= randomItem3;
-    var car4= randomItem4;
-    var totalCars= ""
-    
-    console.log("this :"+totalCars)
-    
+    var car1 = randomItem;
+    var car2 = randomItem2;
+    var car3 = randomItem3;
+    var car4 = randomItem4;
+    var totalCars = 0
+
+    console.log("this :" + totalCars)
+
 
     $(document).ready(function () {
         //Sets initial number
@@ -79,53 +81,61 @@
         //sets the value for each car
 
         $("#car1").click(function () {
-          //  var car1 = Math.floor(Math.random() * 10) + 1;
-            
-          var car1=randomItem
-          total= total + car1
-          console.log(car1)
-          console.log(total)
-           // $("#car1").append(car1)
+
+
+            var car1 = randomItem
+            total = total + car1
+            console.log("car1" + car1)
+            $("#total").text(function () {
+                totalCars = totalCars + car1
+                console.log(totalCars)
+                $("#total").text(totalCars)
+            })
         })
 
         $("#car2").click(function () {
-            var car2=randomItem2
-        //    var car2 = Math.floor(Math.random() * 10) + 1;
-            console.log("car2: "+car2)
+            var car2 = randomItem2
+            $("#total").text(function () {
+                totalCars = totalCars + car2
+                console.log(totalCars)
+                console.log("car2:" + car2)
+                $("#total").text(totalCars)
+            })
+
 
         })
 
         $("#car3").click(function () {
-
-            var car3=randomItem3
-            //var car3 = Math.floor(Math.random() * 10) + 1;
-            console.log("car3: "+car3)
+            var car3 = randomItem3
+            $("#total").text(function () {
+                totalCars = totalCars + car3
+                console.log(totalCars)
+                console.log("car3:" + car3)
+                $("#total").text(totalCars)
+            })
 
         })
 
         $("#car4").click(function () {
-
-            var car4=randomItem4
-           // var car4 = Math.floor(Math.random() * 10) + 1;
-            console.log("car4: "+car4)
+            var car4 = randomItem4
+            $("#total").text(function () {
+                totalCars = totalCars + car4
+                console.log(totalCars)
+                console.log("car4:" + car4)
+                $("#total").text(totalCars)
+            })
 
         })
-        
-        $(totalCars).click(function(){
-            totalCars= total+car1
-            totalCars= total+car2
-            totalCars= total+car3
-            totalCars= total+car4
-            console.log("add:"totalCars)
-        })
-        
-        
 
-        
-})
-  
-  
-    
+
+
+
+
+
+    })
+
+
+
 
 
 
