@@ -29,15 +29,19 @@
     <img id="car4" src="assets/images/pexels-photo-210143.jpeg" alt="picture of a Ford GT" width="300px">
 
     <br>
-    <button type="button" id="random">Press to Start the Game</button>
+    <button type="button" id="random">Play again</button>
 
 </body>
 
 <div id="display"></div>
 
 <section>
-    <p>Wins:</p>
-    <p>Losses</p>
+    <p>Wins:
+        <span id="won"></span>
+    </p>
+    <p>Losses
+        <span id="loss"></span>
+    </p>
 </section>
 
 <p>Your Total Score:
@@ -59,111 +63,130 @@
     var randomItem2 = carNumber[Math.floor(Math.random() * carNumber.length)];
     var randomItem3 = carNumber[Math.floor(Math.random() * carNumber.length)];
     var randomItem4 = carNumber[Math.floor(Math.random() * carNumber.length)];
-    // var car1 = randomItem;
-    // var car2 = randomItem2;
-    // var car3 = randomItem3;
-    // var car4 = randomItem4;
     var totalCars = 0
-    var wins=0
-    var losses=0
+    var wins = 0
+    var losses = 0
     var random = Math.floor(Math.random() * 100) + 20;
+
+    
+
 
     console.log("this :" + totalCars)
     $(document).ready(function () {
+
+
+//resets total
+
+  $("#random").click(reset())
+  
+  function reset(){
+    var randomItem = carNumber[Math.floor(Math.random() * carNumber.length)];
+    var randomItem2 = carNumber[Math.floor(Math.random() * carNumber.length)];
+    var randomItem3 = carNumber[Math.floor(Math.random() * carNumber.length)];
+    var randomItem4 = carNumber[Math.floor(Math.random() * carNumber.length)];
+    totalCars=0
+    var random = Math.floor(Math.random() * 100) + 20;
+
+      
+    }
+  
+
+
+
         //Sets initial number
-       $("#random").click(function () {
-           // var random = Math.floor(Math.random() * 100) + 20;
+        $("#random").text(function () {
             console.log(random)
             $("#display").text(random)
         })
+
+
         //sets the value for each car
         $("#car1").click(function () {
-            //var car1 = randomItem
-            total = total + randomItem
-            console.log("car1" + randomItem)
-           // $("#total").text(function () {
-                totalCars = totalCars + randomItem
-                console.log(totalCars)
-                $("#total").text(totalCars)
+            total = total + randomItem;
+            console.log("car1" + randomItem);
+            totalCars = totalCars + randomItem;
+            console.log(totalCars);
+            $("#total").text(totalCars);
 
-                if (totalCars==random){
-                    winn()
-                }
-                else if (totalCars>random){
-                    loss()
-                }
-           })
+            if (totalCars == random){
+                winn()
+            }
+            else if (totalCars > random){
+                loss()
+            }
         })
-        $("#car2").click(function () {
-            //var car2 = randomItem2
-           $("#total").text(function () {
-                totalCars = totalCars + randomItem2
-                console.log(totalCars)
-                console.log("car2:" + randomItem2)
-                $("#total").text(totalCars)
-            
-                if (totalCars==random){
-                    winn();
-                }
-                else if (totalCars>random){
-                    loss();
-                }
-           })
+    })
+    $("#car2").click(function () {
+        $("#total").text(function () {
+            totalCars = totalCars + randomItem2;
+            console.log(totalCars);
+            console.log("car2:" + randomItem2);
+            $("#total").text(totalCars);
+
+            if (totalCars == random) {
+                winn();
+            }
+            else if (totalCars > random) {
+                loss();
+            }
         })
+    })
 
 
-        $("#car3").click(function () {
-           // var car3 = randomItem3
-           $("#total").text(function () {
-                totalCars = totalCars + randomItem3             
-                 console.log(totalCars)
-                console.log("car3:" +randomItem3)
-                $("#total").text(totalCars)
+    $("#car3").click(function () {
+        $("#total").text(function () {
+            totalCars = totalCars + randomItem3
+            console.log(totalCars)
+            console.log("car3:" + randomItem3)
+            $("#total").text(totalCars)
 
-                if (totalCars==random){
-                    winn()
-                }
-                else if (totalCars>random){
-                    loss()
-                }
-           })
+            if (totalCars == random) {
+                winn()
+            }
+            else if (totalCars > random) {
+                loss()
+            }
         })
+    })
 
-        $("#car4").click(function ()   {      
-         // var car4 = randomItem4
-           $("#total").text(function () {
-                totalCars = totalCars + randomItem4
-                console.log(totalCars)
-                console.log("car4:" + randomItem4)
-                $("#total").text(totalCars)
+    $("#car4").click(function () {
+        $("#total").text(function () {
+            totalCars = totalCars + randomItem4
+            console.log(totalCars)
+            console.log("car4:" + randomItem4)
+            $("#total").text(totalCars)
 
-                if (totalCars==random){
-                    winn()
-                }
-                else if (totalCars>random){
-                    loss()
-                }
-            })
-       })
-//    })
+            if (totalCars == random) {
+                winn()
+            }
+            else if (totalCars > random) {
+                loss()
+            }
+        })
+        $("#bu")
+    })
+    //    })
 
-function winn (){
-    alert("you win!")
-}
+    function winn() {
+        alert("you win!")
+        wins++;
+        console.log("wins: ", wins)
+        $("#won").text(wins)
+        reset()
+    }
 
-function loss (){
-    alert("You lose")
-}
-
+    function loss() {
+        alert("You lose")
+        losses++
+        console.log("losses: ", losses);
+        $("#loss").text(losses)
+    }
+   
+  
+  
 </script>
 
 
 
 
 </html>
-
-
-
-
-
-
