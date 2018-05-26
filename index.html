@@ -68,7 +68,10 @@
     var losses = 0
     var random = Math.floor(Math.random() * 100) + 20;
 
+
+ 
     
+
 
 
     console.log("this :" + totalCars)
@@ -77,18 +80,9 @@
 
 //resets total
 
-  $("#random").click(reset())
-  
-  function reset(){
-    var randomItem = carNumber[Math.floor(Math.random() * carNumber.length)];
-    var randomItem2 = carNumber[Math.floor(Math.random() * carNumber.length)];
-    var randomItem3 = carNumber[Math.floor(Math.random() * carNumber.length)];
-    var randomItem4 = carNumber[Math.floor(Math.random() * carNumber.length)];
-    totalCars=0
-    var random = Math.floor(Math.random() * 100) + 20;
 
-      
-    }
+  
+ 
   
 
 
@@ -180,9 +174,21 @@
         losses++
         console.log("losses: ", losses);
         $("#loss").text(losses)
+        reset()
     }
    
-  
+    function reset(){
+    random = Math.floor(Math.random() * 100) + 20;
+    console.log("reset: "+random)
+    randomItem = carNumber[Math.floor(Math.random() * carNumber.length)];
+    randomItem2 = carNumber[Math.floor(Math.random() * carNumber.length)];
+    randomItem3 = carNumber[Math.floor(Math.random() * carNumber.length)];
+    randomItem4 = carNumber[Math.floor(Math.random() * carNumber.length)];
+    totalCars=0
+    $("#display").text(random)
+      
+    }
+    
   
 </script>
 
