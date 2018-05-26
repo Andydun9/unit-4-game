@@ -7,7 +7,7 @@
     <link href="assets/css/reset.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Fira+Sans+Extra+Condensed:400,500" rel="stylesheet">
     <link rel="icon" href="assets/images/pexels-photo-120049.jpeg" type="image/jpeg" sizes="16x16">
 </head>
 
@@ -16,13 +16,15 @@
 </header>
 
 <body>
-    <p>You will be given a random number at the start of the game.</p>
-    <p>There are cars below. By clicking on a car you will add a specific amount of point to your total score.</p>
-    <p>You win the game by matching your total score to a random number, you lose the game if your total score goes above the
-        random number.</p>
-    <p>The value of each car is hidden from you until you click on it. </p>
-    <p>Each time when the game start, the game will change the values of each car.</p>
-
+    <div class="content-wrap">
+        <ol>
+    <li>You will be given a random number at the start of the game.</li>
+    <li>There are cars below. By clicking on a car you will add a specific amount of point to your total score.</li>
+    <li>You win the game by matching your total score to a random number, you lose the game if your total score goes above the
+        random number.</li>
+    <li>The value of each car is hidden from you until you click on it. </li>
+    <li>Each time when the game start, the game will change the values of each car.</li>
+        </ol>
     <img id="car1" src="assets/images/audi-audi-car-automobile-168938.jpg" alt="picture of an Audi car" width="300px">
     <img id="car2" src="assets/images/pexels-photo-1093230.jpeg" alt="picture of a mustang" width="300px">
     <img id="car3" src="assets/images/pexels-photo-120049.jpeg" alt="picture of a mercedies" width="300px">
@@ -31,16 +33,18 @@
 <br>
 
 
-
+    </div>
 </body>
 
 <div id="display"></div>
 
+     <div id="scores">
 <section>
-    <p>Wins:
+   
+    <p>Wins: 
         <span id="won"></span>
     </p>
-    <p>Losses
+    <p>Losses: 
         <span id="loss"></span>
     </p>
 </section>
@@ -48,13 +52,10 @@
 <p>Your Total Score:
     <span id="total"> </span>
 </p>
-
+    </div>
 <div></div>
+    
 
-<footer>
-    &copy;2018
-
-</footer>
 <script src="assets/javascript/game.js"></script>
 
 

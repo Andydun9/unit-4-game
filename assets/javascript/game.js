@@ -23,7 +23,7 @@
 
         $("#display").text(function () {
             console.log(random)
-            $("#display").text(random)
+            $("#display").text("Number to guess: "+random)
         })
 
 
@@ -95,7 +95,7 @@
     //    })
 
     function winn() {
-        alert("you win!")
+        alert("You Win!")
         wins++;
         console.log("wins: ", wins)
         $("#won").text(wins)
@@ -103,7 +103,7 @@
     }
 
     function loss() {
-        alert("You lose")
+        alert("You Lose")
         losses++
         console.log("losses: ", losses);
         $("#loss").text(losses)
@@ -120,6 +120,6 @@
         randomItem3 = carNumber[Math.floor(Math.random() * carNumber.length)];
         randomItem4 = carNumber[Math.floor(Math.random() * carNumber.length)];
         totalCars = 0
-        $("#display").text(random)
+        $("#display").text("number to guess: "+random)
 
     }
